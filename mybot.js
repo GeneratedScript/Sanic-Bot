@@ -130,9 +130,5 @@ if (message.content.startsWith("Credits")){
   client.on("guildMemberLeave", (member) => {
 client.channels.get('364081762688696322').send("<@"+member.id+">"+' has left the server!')
 
-client.on("message", (message) => {
-    if(message.content.includes('gen')){
-        client.channels.sendMessage("o ya, GeneratedScript? I know him, he's sexy af.")
-    } });
   });
   client.login(config.token);
