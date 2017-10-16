@@ -39,6 +39,7 @@ if (message.content.startsWith("dm ")){
     if(message.member.roles.has(myRole.id)) {
         let member = message.mentions.members.first();
         member.sendMessage(message.content.substring(3));
+        message.delete()
       } else {
         console.log(`Cannot kick. Reason; Insufficient permissions.`);
         message.channel.send("Cannot kick. Reason; Insufficient permissions.");
