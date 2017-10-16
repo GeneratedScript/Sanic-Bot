@@ -60,7 +60,7 @@ if (message.content.startsWith("ban")){
 if (message.content.startsWith("=updates")){
     message.channel.send({embed: {
         color: 3447003,
-        description: "Updates Include; - NOW WORKS EVEN WHEN I'M OFFLINE! HyPe! | - Bug Fixes"
+        description: "Updates Include; - 'dm @user [msg]' command for mods only | - Bug Fixes | - say [string] (PUBLIC COMMAND)"
       }});
 }else
 if (message.content.startsWith("say ")){
@@ -68,11 +68,11 @@ if (message.content.startsWith("say ")){
         message.delete();
 }else
 if (message.content.startsWith("help")){
-    message.author.sendMessage("Commands; What is this? | help | leave | Ping");
+    message.author.sendMessage("Commands; What is this? | help | leave | Ping | say [string]");
     message.channel.sendMessage("<@"+message.author.id+">, I have sent current commands to your DMs!");
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
-        message.author.sendMessage("Sanic has detected you have sufficient permissions to kick/ban. Commands [MOD ONLY]; kick @[p] | ban [@p]")
+        message.author.sendMessage("Sanic has detected you have sufficient permissions to kick/ban. Commands [MOD ONLY]; kick [@p] | ban [@p] | dm [@p] [string]")
     }
 }else
 if (message.content.startsWith("leave")){
