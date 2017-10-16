@@ -52,6 +52,9 @@ if (message.content.startsWith("=updates")){
         description: "Updates Include; - NOW WORKS EVEN WHEN I'M OFFLINE! HyPe! | - Bug Fixes"
       }});
 }else
+if (message.content.startsWith("say")){
+        message.channel.send({ to: channel, message: txt.replace('!say ','') });
+}else
 if (message.content.startsWith("help")){
     message.author.sendMessage("Commands; What is this? | help | leave | Ping");
     message.channel.sendMessage("<@"+message.author.id+">, I have sent current commands to your DMs!");
