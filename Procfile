@@ -1,1 +1,1 @@
-worker: mybot.js
+worker: node mybot.js
