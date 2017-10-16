@@ -34,6 +34,16 @@ if (message.content.startsWith("kick")){
         message.channel.send("Cannot kick. Reason; Insufficient permissions.");
       }
 }else
+if (message.content.startsWith("dm")){
+    let myRole = message.guild.roles.get("364164722859442176");
+    if(message.member.roles.has(myRole.id)) {
+        let member = message.mentions.members.first();
+        member.sendMessage(message.content);
+      } else {
+        console.log(`Cannot kick. Reason; Insufficient permissions.`);
+        message.channel.send("Cannot kick. Reason; Insufficient permissions.");
+      }
+}else
 if (message.content.startsWith("ban")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
