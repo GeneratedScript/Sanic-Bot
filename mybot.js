@@ -57,7 +57,7 @@ if (message.content.startsWith("ban")){
         message.channel.send("Cannot ban. Reason; Insufficient permissions.");
       }
 }else
-if (message.content.startsWith("purge ")){
+if (message.content.startsWith("+=purge ")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
        let numberofmessages = message.content.substring(6)
@@ -68,7 +68,7 @@ if (message.content.startsWith("purge ")){
 if (message.content.startsWith("=updates")){
     message.channel.send({embed: {
         color: 3447003,
-        description: "Updates Include; - 'dm @user [msg]' command for mods only | - Bug Fixes | - say [string] (PUBLIC COMMAND) | purge [num] (MOD ONLY)"
+        description: "Updates Include; - 'dm @user [msg]' command for mods only | - Bug Fixes | - say [string] (PUBLIC COMMAND) | +=purge [num] (MOD ONLY)"
       }});
 }else
 if (message.content.startsWith("say ")){
@@ -80,7 +80,7 @@ if (message.content.startsWith("help")){
     message.channel.sendMessage("<@"+message.author.id+">, I have sent current commands to your DMs!");
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
-        message.author.sendMessage("Sanic has detected you have sufficient permissions to kick/ban. Commands [MOD ONLY]; kick [@p] | ban [@p] | dm [@p] [string] | purge [num]")
+        message.author.sendMessage("Sanic has detected you have sufficient permissions to kick/ban. Commands [MOD ONLY]; kick [@p] | ban [@p] | dm [@p] [string] | +=purge [num]")
     }
 }else
 if (message.content.startsWith("leave")){
