@@ -52,8 +52,9 @@ if (message.content.startsWith("=updates")){
         description: "Updates Include; - NOW WORKS EVEN WHEN I'M OFFLINE! HyPe! | - Bug Fixes"
       }});
 }else
-if (message.content.startsWith("say")){
-        message.channel.send({ to: channel, message: txt.replace('!say ','') });
+if (message.content.startsWith("say ")){
+        message.channel.send(message.content.substring(4));
+        message.delete();
 }else
 if (message.content.startsWith("help")){
     message.author.sendMessage("Commands; What is this? | help | leave | Ping");
