@@ -128,7 +128,7 @@ if (message.content.startsWith("Credits")){
   });
 
   client.on("guildMemberLeave", (member) => {
-client.channels.get('364081762688696322').send("<@"+member.id+">"+' has left the server!')
+client.channels.get('364081762688696322').send(member.displayName+' has left the server!')
 
   });
   client.login(config.token);
