@@ -133,9 +133,6 @@ client.channels.get('364081762688696322').send("<@"+member.id+">"+' has left the
 client.on("message", (message) => {
     if(message.content.includes('gen')){
         client.channels.sendMessage("o ya, GeneratedScript? I know him, he's sexy af.")
-    } else
-        if(message.content.includes('Generated')){
-            client.channels.sendMessage("o ya, GeneratedScript? I know him, he's sexy af.")}
-})
+    } });
   });
   client.login(config.token);
