@@ -49,7 +49,7 @@ if (message.content.startsWith("ban")){
 if (message.content.startsWith("=updates")){
     message.channel.send({embed: {
         color: 3447003,
-        description: "Updates Include; - help command | - Playing 'help' status."
+        description: "Updates Include; - NOW WORKS EVEN WHEN I'M OFFLINE! HyPe! | - Bug Fixes"
       }});
 }else
 if (message.content.startsWith("help")){
