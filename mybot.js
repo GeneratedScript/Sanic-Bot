@@ -60,7 +60,7 @@ if (message.content.startsWith("ban")){
 if (message.content.startsWith("+=purge ")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
-       let numberofmessages = message.content.substring(6)
+       let numberofmessages = message.content.substring(8)
        let messagecount = parseInt(numberofmessages);
        message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
       }
