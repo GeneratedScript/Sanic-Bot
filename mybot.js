@@ -1,0 +1,110 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const config = require("./config.json");
+
+
+
+client.on('ready', () => {
+    client.channels.get('364081762688696322').send('@everyone Sanic has been updated! Say `=updates` to see updates!');
+    client.user.setGame('say help for help.')
+});
+
+client.on("message", (message) => {
+    if (message.content.startsWith("What's this")) {
+      message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
+    } else
+
+    if (message.content.startsWith("Ping")) {
+        message.channel.send("pong!");
+}else
+
+    if (message.content.startsWith("What's this?")) {
+        message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
+} else
+
+if (message.content.startsWith("kick")){
+    let myRole = message.guild.roles.get("364164722859442176");
+    if(message.member.roles.has(myRole.id)) {
+        let member = message.mentions.members.first();
+        member.kick();
+        message.channel.send("User has been kicked.")
+        message.react("👍")
+      } else {
+        console.log(`Cannot kick. Reason; Insufficient permissions.`);
+        message.channel.send("Cannot kick. Reason; Insufficient permissions.");
+      }
+}else
+if (message.content.startsWith("ban")){
+    let myRole = message.guild.roles.get("364164722859442176");
+    if(message.member.roles.has(myRole.id)) {
+        let member = message.mentions.members.first();
+        member.ban();
+        message.channel.send("Uh oh! "+member.displayName+" was banned!")
+        message.react("👍")
+      } else {
+        console.log(`Cannot ban. Reason; Insufficient permissions.`);
+        message.channel.send("Cannot ban. Reason; Insufficient permissions.");
+      }
+}else
+if (message.content.startsWith("=updates")){
+    message.channel.send({embed: {
+        color: 3447003,
+        description: "Updates Include; - help command | - Playing 'help' status."
+      }});
+}else
+if (message.content.startsWith("help")){
+    message.author.sendMessage("Commands; What is this? | help | leave | Ping");
+    message.channel.sendMessage("<@"+message.author.id+">, I have sent current commands to your DMs!");
+    let myRole = message.guild.roles.get("364164722859442176");
+    if(message.member.roles.has(myRole.id)) {
+        message.author.sendMessage("Sanic has detected you have sufficient permissions to kick/ban. Commands [MOD ONLY]; kick @[p] | ban [@p]")
+    }
+}else
+if (message.content.startsWith("leave")){
+message.author.kick();
+}
+if (message.content.startsWith("Credits")){
+    message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Credits Embed",
+    description: "Credits can be found below.",
+    fields: [{
+        name: "Admins:",
+        value: "Admins are **OverpoweredMasterMan#3121**, **TatGuyHyperTrix#9558**, **GeneratedScript#3909**, and **marcusi#8794**."
+      },
+      {
+        name: "Bot:",
+        value: "Sanic Bot was made by **GeneratedScript#3909**."
+      },
+      {
+        name: "Discord:",
+        value: "Discord Server was made by **Ice-Sama#6304**."
+      },
+    {
+      name: "Website Creator(s)/Twitter Creator(s):",
+      value: "Website Creator(s) and Twitter Creator(s) are as follow; **Johnny {Ghost Freak}#1072**, **『PALADIN OF THE BLACK LION』#8077 (btw he's thicc af)**"
+    }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "Sanic Says: Stay thicc"
+    }
+  }
+});
+}
+    
+  });
+
+  client.on("guildMemberAdd", (member) => {
+    client.channels.get('364081762688696322').send("<@"+member.id+">"+' has joined the server!');
+  });
+
+  client.on("guildMemberLeave", (member) => {
+client.channels.get('364081762688696322').send("<@"+member.id+">"+' has left the server!')
+  });
+  client.login(config.token);
