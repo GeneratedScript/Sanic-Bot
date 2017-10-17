@@ -27,9 +27,9 @@ if (message.content.startsWith("kick")){
     if(message.member.roles.has(myRole.id)) {
 
         let member = message.mentions.members.first();
+        member.kick();
         message.channel.send("User has been kicked.")
         message.react("👍")
-            member.kick();
       } else {
         console.log(`Cannot kick. Reason; Insufficient permissions.`);
         message.channel.send("Cannot kick. Reason; Insufficient permissions.");
@@ -38,10 +38,9 @@ if (message.content.startsWith("kick")){
 if (message.content.startsWith("dm ")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
+         message.delete();
         let member = message.mentions.members.first();
         member.sendMessage(message.content.substring(3));
-        
-            message.delete()
       } else {
         console.log(`Cannot kick. Reason; Insufficient permissions.`);
         message.channel.send("Cannot kick. Reason; Insufficient permissions.");
@@ -51,10 +50,9 @@ if (message.content.startsWith("ban")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
         let member = message.mentions.members.first();
+        member.ban();
         message.channel.send("Uh oh! "+member.displayName+" was banned!")
         message.react("👍")
-        
-            member.ban();
       } else {
         console.log(`Cannot ban. Reason; Insufficient permissions.`);
         message.channel.send("Cannot ban. Reason; Insufficient permissions.");
@@ -66,7 +64,6 @@ if (message.content.startsWith("+=purge ")){
        let numberofmessages = message.content.substring(8)
        let messagecount = parseInt(numberofmessages);
        message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-       
       }
 }else
 if (message.content.startsWith("=updates")){
@@ -77,8 +74,7 @@ if (message.content.startsWith("=updates")){
 }else
 if (message.content.startsWith("say ")){
         message.channel.send(message.content.substring(4));
-        
-            message.delete();
+         message.delete();
 }else
 if (message.content.startsWith("help")){
     message.author.sendMessage("Commands; What is this? | help | leave | Ping | say [string]");
