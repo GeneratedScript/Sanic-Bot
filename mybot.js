@@ -5,7 +5,7 @@ const config = require("./config.json");
 
 
 client.on('ready', () => {
-    client.channels.get('364081762688696322').send('@everyone Sanic has been updated! Say `=updates` to see updates!');
+    client.channels.get('364081762688696322').send('Sanic has been updated! Say `=updates` to see updates!');
     client.user.setGame('say help for help.')
 });
 
