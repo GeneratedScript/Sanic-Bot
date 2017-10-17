@@ -27,7 +27,6 @@ if (message.content.startsWith("kick")){
     if(message.member.roles.has(myRole.id)) {
 
         let member = message.mentions.members.first();
-        member.kick();
         message.channel.send("User has been kicked.")
         message.react("👍")
         client.channels.get('369641434225311754').send({embed: {
@@ -42,6 +41,7 @@ if (message.content.startsWith("kick")){
                 name:  message.author.displayName+" has used Kick Command.",
                 value: "Kick was used on "+member.displayName,
             }]}})
+            member.kick();
       } else {
         console.log(`Cannot kick. Reason; Insufficient permissions.`);
         message.channel.send("Cannot kick. Reason; Insufficient permissions.");
@@ -52,7 +52,6 @@ if (message.content.startsWith("dm ")){
     if(message.member.roles.has(myRole.id)) {
         let member = message.mentions.members.first();
         member.sendMessage(message.content.substring(3));
-        message.delete()
         client.channels.get('369641434225311754').send({embed: {
             color: 3447003,
             author: {
@@ -65,6 +64,7 @@ if (message.content.startsWith("dm ")){
                 name:  message.author.displayName+" has used DM Command.",
                 value: "DM was used on "+member.displayName,
             }]}})
+            message.delete()
       } else {
         console.log(`Cannot kick. Reason; Insufficient permissions.`);
         message.channel.send("Cannot kick. Reason; Insufficient permissions.");
@@ -74,7 +74,6 @@ if (message.content.startsWith("ban")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
         let member = message.mentions.members.first();
-        member.ban();
         message.channel.send("Uh oh! "+member.displayName+" was banned!")
         message.react("👍")
         client.channels.get('369641434225311754').send({embed: {
@@ -89,6 +88,7 @@ if (message.content.startsWith("ban")){
                 name:  message.author.displayName+" has used Ban Command.",
                 value: "Ban was used on "+member.displayName,
             }]}})
+            member.ban();
       } else {
         console.log(`Cannot ban. Reason; Insufficient permissions.`);
         message.channel.send("Cannot ban. Reason; Insufficient permissions.");
@@ -122,7 +122,6 @@ if (message.content.startsWith("=updates")){
 }else
 if (message.content.startsWith("say ")){
         message.channel.send(message.content.substring(4));
-        message.delete();
         client.channels.get('369641434225311754').send({embed: {
             color: 3447003,
             author: {
@@ -133,8 +132,9 @@ if (message.content.startsWith("say ")){
             description: "say command has been used.",
             fields: [{
                 name:  message.author.displayName+" has used say Command.",
-                value: message.content.substring(6)+" was said.",
+                
             }]}})
+            message.delete();
 }else
 if (message.content.startsWith("help")){
     message.author.sendMessage("Commands; What is this? | help | leave | Ping | say [string]");
