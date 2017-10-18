@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-
+const bad_words = ['anal','anus','arse','ass','ballsack','balls','bastard','bitch','biatch','bloody','blowjob','blow job','bollock','bollok','boner','boob','bugger','bum','butt','buttplug','clitoris','cock','coon','crap','cunt','damn','dick','dildo','dyke','fag','feck','fellate','fellatio','felching','fuck','f u c k','fudgepacker','fudge packer','flange','Goddamn','God damn','hell','homo','jerk','jizz','knobend','knob end','labia','lmao','lmfao','muff','nigger','nigga','omg','penis','piss','poop','prick','pube','pussy','queer','scrotum','sex','shit','s hit','sh1t','slut','smegma','spunk','tit','tosser','turd','twat','vagina','wank','whore','wtf']
 
 
 client.on('ready', () => {
@@ -13,6 +13,10 @@ client.on("message", (message) => {
     if (message.content.startsWith("What's this")) {
       message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
     } else
+        if (message.content.startsWith(bad_words)) {
+            message.delete();
+            message.channel.send("😡 "+message.author+"! Language! 😡")
+        } else
 
     if (message.content.startsWith("Ping")) {
         message.channel.send("pong!");
