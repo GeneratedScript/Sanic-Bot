@@ -55,7 +55,7 @@ message.channel.send(rand)
         if (message.content.startsWith("-8ball ")){
     var Messages = ['It is certain' ,'It is decidedly so' ,'Without a doubt' ,'Yes definitely' ,'You may rely on it' ,'As I see it, yes' ,'Most likely' ,'Outlook good' ,'Yes' ,'Signs point to yes' ,'Reply hazy try again' ,'Ask again later' ,'Better not tell you now' ,'Cannot predict now' ,'Concentrate and ask again', 'Dont count on it' ,'My reply is no' ,'My sources say no' ,'Outlook not so good' ,'Very doubtful']
 var rand = Messages [Math.floor(Math.random()*Messages.length)]
-message.channel.send(message.author+", I say: **"+rand+"** to: **"+message.content.substring(7)+"**.")
+message.channel.send("🎱 | "+message.author+", I say: **"+rand+"** to: **"+message.content.substring(7)+"**.")
     }
     else
 if (message.content.startsWith("ban")){
