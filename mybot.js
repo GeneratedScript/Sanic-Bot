@@ -43,9 +43,21 @@ if (message.content.startsWith("dm ")){
         member.sendMessage(message.content.substring(3));
       } else {
         console.log(`Cannot kick. Reason; Insufficient permissions.`);
-        message.channel.send("Cannot kick. Reason; Insufficient permissions.");
+        message.channel.send("Cannot DM. Reason; Insufficient permissions.");
       }
 }else
+    if (message.content.startsWith("Hi")){
+    var Messages = ['Hello!', 'Hi!', 'ugh. Hi.', 'Henlo']
+var rand = Messages [Math.floor(Math.random()*Messages.length)]
+message.channel.send(rand)
+    }
+    else
+        if (message.content.startsWith("-8ball ")){
+    var Messages = ['It is certain' ,'It is decidedly so' ,'Without a doubt' ,'Yes definitely' ,'You may rely on it' ,'As I see it, yes' ,'Most likely' ,'Outlook good' ,'Yes' ,'Signs point to yes' ,'Reply hazy try again' ,'Ask again later' ,'Better not tell you now' ,'Cannot predict now' ,'Concentrate and ask again', 'Dont count on it' ,'My reply is no' ,'My sources say no' ,'Outlook not so good' ,'Very doubtful']
+var rand = Messages [Math.floor(Math.random()*Messages.length)]
+message.channel.send("I say **"+rand+"** to "+message.content.substring(7))
+    }
+    else
 if (message.content.startsWith("ban")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
