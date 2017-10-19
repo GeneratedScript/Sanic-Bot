@@ -39,7 +39,6 @@ if (message.content.startsWith("=mute")){
         msg.channel.send("<@"+member.id+"> was unmuted!")
       }, ms(time));
       }
-    else message.channel.send("Cannot mute. Reason: Insufficient permissions.");
   } else
 if (message.content.startsWith("kick")){
     let myRole = message.guild.roles.get("364164722859442176");
