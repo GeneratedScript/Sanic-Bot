@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = ">"
 client.on('ready', () => {
-  client.guilds.channel.sendMessage("Sanic has restarted! @everyone")
-  
+  message.channel.sendMessage("Sanic has restarted! @everyone")
   client.user.setGame(` >help`)
 });
 
