@@ -24,8 +24,8 @@ client.on("message", (message) => {
         message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
 } else
 if (message.content.startsWith("=mute")){
-    if(message.author.roles.has("364164722859442176")){
-      let muterole = message.guild.roles.find("name", "Muted!")
+    if(message.author.roles.has("name", "Game-Creator")){
+      let muterole = message.channel.roles.find("name", "Muted!")
     let member = message.mentions.members.first();
       member.addRole(muterole.id);
         message.react("👍")
