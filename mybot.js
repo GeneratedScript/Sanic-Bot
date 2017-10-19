@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-const bad_words = ['anal','anus','arse','ass','ballsack','balls','bastard','bitch','biatch','bloody','blowjob','blow job','bollock','bollok','boner','boob','bugger','bum','butt','buttplug','clitoris','cock','coon','crap','cunt','damn','dick','dildo','dyke','fag','feck','fellate','fellatio','felching','fuck','f u c k','fudgepacker','fudge packer','flange','Goddamn','God damn','hell','homo','jerk','jizz','knobend','knob end','labia','lmao','lmfao','muff','nigger','nigga','omg','penis','piss','poop','prick','pube','pussy','queer','scrotum','sex','shit','s hit','sh1t','slut','smegma','spunk','tit','tosser','turd','twat','vagina','wank','whore','wtf']
-
+const ms = require("ms")
 
 client.on('ready', () => {
     client.channels.get('364081762688696322').send('Sanic has been updated! Say `=updates` to see updates!');
@@ -25,7 +24,23 @@ client.on("message", (message) => {
     if (message.content.startsWith("What's this?")) {
         message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
 } else
-
+if (message.content.startsWith("=mute")){
+    let a = message.guild.roles.find("name", "Game-Creator");
+    if(message.author.roles.has(a)){
+      let muterole = message.guild.roles.find("name", "Muted!")
+    let member = message.mentions.members.first();
+    if (!member) return message.reply(message.author+", you have not mentioned anyone!")
+      let params = message.content.split(" ").slice(1);
+      let time = params[1];
+      member.addRole(muterole.id);
+      msg.channel.send("<@"+member.id+"> was muted for ${ms(ms(time), {long: true})}')")
+      setTimeout(function() {
+        member.removeRole(muterole.id);
+        msg.channel.send("<@"+member.id+"> was unmuted!")
+      }, ms(time));
+      }
+    else message.channel.send("Cannot mute. Reason: Insufficient permissions.");
+  } else
 if (message.content.startsWith("kick")){
     let myRole = message.guild.roles.get("364164722859442176");
     if(message.member.roles.has(myRole.id)) {
