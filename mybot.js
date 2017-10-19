@@ -145,7 +145,7 @@ if (command === "cusannounce") {
 
   if (command === "8ball") {
    var ball = ['Yes','No doubt about it','Try again','Signs point to yes','I say no','No chance','Dont think so'];
-   message.channel.sendMessage("🎱 | "+ball[Math.floor(Math.random () * ball.length)]);
+   message.channel.sendMessage("🎱 | **"+ball[Math.floor(Math.random () * ball.length)]+"** | "+message.author);
   }
 
 if (command === "roll") {
