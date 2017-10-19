@@ -24,8 +24,7 @@ client.on("message", (message) => {
         message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
 } else
 if (message.content.startsWith("=mute")){
-    let a = message.guild.roles.find("name", "Game-Creator");
-    if(message.author.roles.has(a.id)){
+    if(message.author.roles.has("364164722859442176")){
       let muterole = message.guild.roles.find("name", "Muted!")
     let member = message.mentions.members.first();
     if (!member) return message.reply(message.author+", you have not mentioned anyone!");
@@ -35,13 +34,12 @@ if (message.content.startsWith("=mute")){
       }
   } else
       if (message.content.startsWith("=unmute")){
-    let a = message.guild.roles.find("name", "Game-Creator");
-    if(message.author.roles.has(a.id)){
+    if(message.author.roles.has("364164722859442176")){
       let muterole = message.guild.roles.find("name", "Muted!")
     let member = message.mentions.members.first();
     if (!member) return message.reply(message.author+", you have not mentioned anyone!");
       member.removeRole(muterole.id);
-      msg.channel.send("<@"+member.id+"> was muted!");
+      msg.channel.send("<@"+member.id+"> was unmuted!");
       }
   } else
 if (message.content.startsWith("kick")){
