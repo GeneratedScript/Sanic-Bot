@@ -27,7 +27,6 @@ if (message.content.startsWith("=mute")){
     if(message.author.roles.has("364164722859442176")){
       let muterole = message.guild.roles.find("name", "Muted!")
     let member = message.mentions.members.first();
-    if (!member) return message.reply(message.author+", you have not mentioned anyone!");
       member.addRole(muterole.id);
         message.react("👍")
       msg.channel.send("<@"+member.id+"> was muted!");
@@ -37,7 +36,6 @@ if (message.content.startsWith("=mute")){
     if(message.author.roles.has("364164722859442176")){
       let muterole = message.guild.roles.find("name", "Muted!")
     let member = message.mentions.members.first();
-    if (!member) return message.reply(message.author+", you have not mentioned anyone!");
       member.removeRole(muterole.id);
       msg.channel.send("<@"+member.id+"> was unmuted!");
       }
