@@ -34,7 +34,7 @@ client.on('message', message => {
   }
 
   if (command === "butthurt") {
-  message.channel.sendMessage("", {
+  message.channel.sendMessage("Take this test to see if you are butthurt;", {
     file: "https://cdn.discordapp.com/attachments/333084193078771712/370593583612297216/image.png"
 });
   }
