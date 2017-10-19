@@ -24,8 +24,8 @@ client.on("message", (message) => {
         message.channel.send("This is a ROBLOX game which is still in development. Stick around!");
 } else
 if (message.content.startsWith("=mute")){
-    if(message.author.roles.has("name", "Game-Creator")){
-      let muterole = message.channel.roles.find("name", "Muted!")
+    if(message.author.roles.has("364164722859442176")){
+      let muterole = message.channel.roles.find("370396551283212298")
     let member = message.mentions.members.first();
       member.addRole(muterole.id);
         message.react("👍")
@@ -34,7 +34,7 @@ if (message.content.startsWith("=mute")){
   } else
       if (message.content.startsWith("=unmute")){
     if(message.author.roles.has("364164722859442176")){
-      let muterole = message.guild.roles.find("name", "Muted!")
+      let muterole = message.guild.roles.find("370396551283212298")
     let member = message.mentions.members.first();
       member.removeRole(muterole.id);
       msg.channel.send("<@"+member.id+"> was unmuted!");
