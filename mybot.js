@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = ">"
 client.on('ready', () => {
   client.guilds.channel.sendMessage("Sanic has restarted! @everyone")
-  console.log('Ready!');
+  
   client.user.setGame(` >help`)
 });
 
@@ -18,7 +18,6 @@ client.on("guildMemberRemove", member => {
 });
 
 client.on("guildCreate", guild => {
-  console.log(`New guild added : ${guild.name}, owned by ${guild.owner.user.username}`)
 });
 
 client.on('message', message => {
@@ -27,7 +26,6 @@ client.on('message', message => {
 
   let command = message.content.split(" ")[0]
   command = command.slice(prefix.length)
-  console.log(command);
 
   let args = message.content.split(" ").slice(1);
 
@@ -264,7 +262,7 @@ if (command === "lockdown") {
       clearTimeout(client.lockit[message.channel.id]);
       delete client.lockit[message.channel.id];
     }).catch(error => {
-      console.log(error);
+      
     });
   } else {
     message.channel.overwritePermissions(message.guild.id, {
@@ -280,7 +278,7 @@ if (command === "lockdown") {
         }, ms(time));
 
       }).catch(error => {
-        console.log(error);
+        
       });
     });
   }
