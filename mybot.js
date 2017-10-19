@@ -73,12 +73,6 @@ client.on('message', message => {
       message.reply("DONT EVEN TRY IT BOI!");
     }
   }
-  if (command === "play ") {
-  var voiceChannel = message.member.voiceChannel;
-    voiceChannel.join()
-    var argresult2 = args.join(' ');
-    const dispatcher = connection.playFile(argresult2);
-  }
 
   if (command === "setstatus") {
     if (message.author.id == "223557159151992832") {
