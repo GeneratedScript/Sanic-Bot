@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-const ms = require("ms")
 
 client.on('ready', () => {
     client.channels.get('364081762688696322').send('Sanic has been updated! Say `=updates` to see updates!');
@@ -29,15 +28,20 @@ if (message.content.startsWith("=mute")){
     if(message.author.roles.has(a)){
       let muterole = message.guild.roles.find("name", "Muted!")
     let member = message.mentions.members.first();
-    if (!member) return message.reply(message.author+", you have not mentioned anyone!")
-      let params = message.content.split(" ").slice(1);
-      let time = params[1];
+    if (!member) return message.reply(message.author+", you have not mentioned anyone!");
       member.addRole(muterole.id);
-      msg.channel.send("<@"+member.id+"> was muted for ${ms(ms(time), {long: true})}')")
-      setTimeout(function() {
-        member.removeRole(muterole.id);
-        msg.channel.send("<@"+member.id+"> was unmuted!")
-      }, ms(time));
+        message.react("👍")
+      msg.channel.send("<@"+member.id+"> was muted!");
+      }
+  } else
+      if (message.content.startsWith("=unmute")){
+    let a = message.guild.roles.find("name", "Game-Creator");
+    if(message.author.roles.has(a)){
+      let muterole = message.guild.roles.find("name", "Muted!")
+    let member = message.mentions.members.first();
+    if (!member) return message.reply(message.author+", you have not mentioned anyone!");
+      member.removeRole(muterole.id);
+      msg.channel.send("<@"+member.id+"> was muted!");
       }
   } else
 if (message.content.startsWith("kick")){
