@@ -74,6 +74,13 @@ client.on('message', message => {
     }
   }
 
+ if (command === "dm") {
+  if (message.member.hasPermission("ADMINISTRATOR")) {
+   let msg = args.slice(3).join(' ')
+let member = message.mentions.users.first();
+   member.sendMessage(msg)
+   }
+  }
   if (command === "setstatus") {
     if (message.author.id == "223557159151992832") {
     var argresult = args.join(' ');
