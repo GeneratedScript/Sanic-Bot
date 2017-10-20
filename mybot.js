@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "<"
 client.on('ready', () => {
-  client.channels.get('364081762688696322').send('Sanic has been restarted! @everyone');
+ 
   client.user.setGame("<help", "https://go.twitch.tv/generatedscript");
 });
 
