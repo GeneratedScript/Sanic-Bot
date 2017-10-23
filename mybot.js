@@ -38,6 +38,13 @@ client.on('message', message => {
     file: "https://cdn.discordapp.com/attachments/333084193078771712/370593583612297216/image.png"
 });
   }
+ 
+ if (command == "setnick") {
+  if (message.member.hasPermission("ADMINISTRATOR")) {
+    let nick = args.slice(3).join(' ');
+   let member = message.mentions.users.first();
+   member.setNickname(nick)
+  }}
   if (command === "announce") {
       if (message.member.hasPermission("ADMINISTRATOR")) {
        let args = message.content.split(" ").slice(1).join(" ");
