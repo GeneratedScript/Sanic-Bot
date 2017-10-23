@@ -44,7 +44,7 @@ client.on('message', message => {
     let nick = args.slice(3).join(' ');
    let member = message.mentions.users.first();
    member.setNickname(nick)
-  }}
+  }};
   if (command === "announce") {
       if (message.member.hasPermission("ADMINISTRATOR")) {
        let args = message.content.split(" ").slice(1).join(" ");
