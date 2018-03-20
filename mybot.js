@@ -9,7 +9,7 @@ client.on('ready', () => {
 
 client.on("guildMemberAdd", member => {
   let guild = member.guild;
- message.channel.send({embed: {
+ guild.defaultChannel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
@@ -33,7 +33,7 @@ client.on("guildMemberAdd", member => {
 });
 client.on("guildMemberRemove", member => {
   let guild = member.guild;
-  message.channel.send({embed: {
+  guild.defaultChannel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
