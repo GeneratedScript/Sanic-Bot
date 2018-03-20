@@ -5,7 +5,7 @@ var pastebin = new PastebinAPI('devkey');
 const prefix = ">"
 client.on('ready', () => {
  
-  client.user.setGame(">help", "https://go.twitch.tv/generatedscript");
+  client.user.setGame(">help || Cyber Hella Cool", "https://go.twitch.tv/generatedscript");
 });
 
 
