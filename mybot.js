@@ -47,8 +47,7 @@ client.on('message', message => {
 });
     }
 } 
-      else
-                   if {
+      else {
  message.channel.send({embed: {
     color: 15158332,
     author: {
@@ -72,28 +71,4 @@ client.on('message', message => {
   });
 })
 
-  pastebin.fail(function (err) {
-    // Something went wrong
-    message.channel.send({embed: {
-    color: 15158332,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "Something went wrong!",
-    url: "https://discord.gg/GwmHMfE",
-    description: "Status can be found below.",
-    fields: [{
-        name: "Error",
-        value: err
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© GeneratedScript"
-    }
-  }
-});
-  })
-}            client.login('NDI1NDUwNTIwMDkwNjQwMzk0.DZHnSA.-mvbi2-1Es7d_B3PgP6-M6X9XCY');
+client.login('NDI1NDUwNTIwMDkwNjQwMzk0.DZHnSA.-mvbi2-1Es7d_B3PgP6-M6X9XCY');
