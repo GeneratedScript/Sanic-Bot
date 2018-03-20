@@ -71,7 +71,7 @@ client.on('message', message => {
 }
 
      })
-  .fail(function (err) {
+  pastebin.fail(function (err) {
     // Something went wrong
     message.channel.send({embed: {
     color: 15158332,
