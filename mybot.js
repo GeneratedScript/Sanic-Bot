@@ -45,8 +45,10 @@ client.on('message', message => {
     }
   }
 });
+    }
 } 
-      else {
+      else
+                   if {
  message.channel.send({embed: {
     color: 15158332,
     author: {
@@ -67,10 +69,9 @@ client.on('message', message => {
       text: "© GeneratedScript"
     }
   }
-});
-}
+  });
+})
 
-     })
   pastebin.fail(function (err) {
     // Something went wrong
     message.channel.send({embed: {
@@ -95,6 +96,4 @@ client.on('message', message => {
   }
 });
   })
-  }
-
-            client.login('NDI1NDUwNTIwMDkwNjQwMzk0.DZHnSA.-mvbi2-1Es7d_B3PgP6-M6X9XCY');
+}            client.login('NDI1NDUwNTIwMDkwNjQwMzk0.DZHnSA.-mvbi2-1Es7d_B3PgP6-M6X9XCY');
