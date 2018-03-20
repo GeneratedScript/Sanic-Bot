@@ -3,17 +3,56 @@ const client = new Discord.Client();
 const prefix = ">"
 client.on('ready', () => {
  
-  client.user.setGame("<help", "https://go.twitch.tv/generatedscript");
+  client.user.setGame(">help", "https://go.twitch.tv/generatedscript");
 });
 
 client.on("guildMemberAdd", member => {
   let guild = member.guild;
-  guild.defaultChannel.sendMessage(`:inbox_tray: The user ${member.user} has joined this server `)
-});
+ message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Member Joined!",
+    url: "https://discord.gg/GwmHMfE",
+    description: ${member.user}+" has joined Cyber!",
+    fields: [{
+        name: "Username",
+        value: ${member.user}
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© GeneratedScript#3909"
+    }
+  }
+});});
 
 client.on("guildMemberRemove", member => {
   let guild = member.guild;
-  guild.defaultChannel.sendMessage(`:outbox_tray: The user ${member.user} has left the server. `)
+ message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Member Joined!",
+    url: "https://discord.gg/GwmHMfE",
+    description: ${member.user}+" just left.",
+    fields: [{
+        name: "Username",
+        value: ${member.user}
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© GeneratedScript#3909"
+    }
+  }
+});
 });
 
 client.on("guildCreate", guild => {
@@ -30,8 +69,10 @@ client.on('message', message => {
 
 
   if (command === "say") {
-      message.channel.sendMessage(args.join(" "));
-  }
+ message.channel.send({embed: {
+  color: 3447003,
+  description: args.join(" ")
+}});  }
 
   if (command === "butthurt") {
   message.channel.sendMessage("Take this test to see if you are butthurt;", {
@@ -139,7 +180,7 @@ if (command === "cusannounce") {
 
 
   if (command === "kms") {
-    message.channel.sendMessage(`:knife: I have successfully killed ${message.author}. :knife:`)
+    message.channel.sendMessage(`nibba owner doesnt approve of death. You could quit the internet instead. :/`)
   }
 
   if (command == "eval") {
@@ -326,4 +367,4 @@ function clean(text) {
     return text;
 }
 
-            client.login('MzY5NTA1NzcwODkyNDI3MjY2.DMZl5g.X0L7vxo4bp-yURChLwU-3jCiO58');
+            client.login('NDI1NDUwNTIwMDkwNjQwMzk0.DZHnSA.-mvbi2-1Es7d_B3PgP6-M6X9XCY');
