@@ -8,4 +8,4 @@ client.on('ready', () => {
 
 
 
-client.login('NDI1NDUwNTIwMDkwNjQwMzk0.DZHnSA.-mvbi2-1Es7d_B3PgP6-M6X9XCY');
+client.login('NDI1NDUwNTIwMDkwNjQwMzk0..-mvbi2-1Es7d_B3PgP6-M6X9XCY');
